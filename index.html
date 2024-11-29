@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Matrix Login</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <canvas id="matrixCanvas"></canvas>
+
+    <div class="login-container" id="loginForm">
+        <h1>AUTHENTICATION REQUIRED</h1>
+        <form action="login.php" method="POST">
+            <input type="text" name="username" placeholder="Username" required>
+            <input type="password" name="password" placeholder="Password" required>
+            <button type="submit">Login</button>
+        </form>
+        <div class="links">
+            <a href="#" class="link1">Forgot password?</a>
+            <a href="#" class="link2" onclick="showRegister()">Don't have an account? Register</a>
+        </div>
+    </div>
+
+    <div class="login-container" id="registerForm" style="display: none;">
+        <h1>AWAKEN YOURSELF</h1>
+        <form action="register.php" method="POST">
+            <input type="text" name="username" placeholder="Username" required>
+            <input type="password" name="password" placeholder="Password" required>
+            <button type="submit">Register</button>
+        </form>
+        <div class="links">
+            <a href="#" class="link2" onclick="showLogin()">Already have an account? Login</a>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
