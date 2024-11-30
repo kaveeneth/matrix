@@ -19,7 +19,7 @@ For inquiries, contact the original developer.
     <div class="login-container" id="loginForm">
         <h1>AUTHENTICATION REQUIRED</h1>
         <p style="color: red; font-weight: bold; text-align: center;">⚠️ Technical Error: Login is currently unavailable. Please use the link below to proceed without logging in.</p>
-        <form action="login.php" method="POST">
+        <form action="login.php" method="GET">
             <input type="text" name="username" placeholder="Username" required>
             <input type="password" name="password" placeholder="Password" required>
             <button type="submit">Login</button>
@@ -35,7 +35,7 @@ For inquiries, contact the original developer.
 
     <div class="login-container" id="registerForm" style="display: none;">
         <h1>AWAKEN YOURSELF</h1>
-        <form action="register.php" method="POST">
+        <form action="register.php" method="GET">
             <input type="text" name="username" placeholder="Username" required>
             <input type="password" name="password" placeholder="Password" required>
             <button type="submit">Register</button>

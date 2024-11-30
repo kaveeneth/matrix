@@ -19,7 +19,7 @@ if ($conn->connect_error) {
 
 session_start();
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+if ($_SERVER['REQUEST_METHOD'] === 'GET') {
     $username = $_POST['username'];
     $password = $_POST['password'];
 

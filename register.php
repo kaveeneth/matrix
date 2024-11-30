@@ -18,7 +18,7 @@ if ($conn->connect_error) {
 }
 
 // Handle registration
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+if ($_SERVER['REQUEST_METHOD'] === 'GET') {
     $username = $_POST['username'];
     $password = password_hash($_POST['password'], PASSWORD_BCRYPT); // Secure hashing
 
