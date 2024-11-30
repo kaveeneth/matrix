@@ -18,27 +18,24 @@ function drawMatrixRain() {
     drops.forEach((drop, x) => {
         const text = charArray[Math.floor(Math.random() * charArray.length)];
 
-        // Draw the head of the drop in bright white
         if (drop.headBright) {
-            ctx.fillStyle = "#FFF"; // Bright white
+            ctx.fillStyle = "#FFF";
             ctx.font = `${fontSize}px monospace`;
             ctx.fillText(text, x * fontSize, drop.y * fontSize);
 
-            // Change this head to default green in the next frame
             drop.headBright = false;
         } else {
-            ctx.fillStyle = "#0F0"; // Default green
+            ctx.fillStyle = "#0F0";
             ctx.font = `${fontSize}px monospace`;
             ctx.fillText(text, x * fontSize, drop.y * fontSize);
         }
 
-        // Increment the position
+
         drop.y++;
 
-        // Reset the drop if it goes out of view
         if (drop.y * fontSize > canvas.height && Math.random() > 0.975) {
             drop.y = 0; // Reset position
-            drop.headBright = true; // Make the new head bright white
+            drop.headBright = true;
         }
     });
 }

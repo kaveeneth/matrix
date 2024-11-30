@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Matrix</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+            background: black;
+            color: #0F0;
+            font-family: monospace;
+        }
+
+        #welcomeText {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            height: 100vh;
+            font-size: 50px;
+            transition: opacity 2s ease-in-out;
+        }
+
+        #timeDisplay {
+            position: absolute;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 50px;
+            color: #0F0;
+            font-family: monospace;
+            opacity: 0;
+            transition: opacity 2s ease-in-out;
+        }
+
+        canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .hidden {
+            opacity: 0;
+        }
+    </style>
+</head>
+<body>
+    <div id="welcomeText">You're now out of the Matrix. Welcome to the real world.</div>
+    <div id="timeDisplay"></div>
+    <canvas id="matrixCanvas" class="hidden"></canvas>
+    <script>
+        const canvas = document.getElementById("matrixCanvas");
+        const ctx = canvas.getContext("2d");
+
+        const timeDisplay = document.getElementById("timeDisplay");
+
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        const characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789@#$%^&*()";
+        const charArray = characters.split("");
+        const fontSize = 16;
+        const columns = canvas.width / fontSize;
+        const drops = Array(Math.floor(columns)).fill(1);
+
+        function drawTime() {
+        const now = new Date();
+        const hours = String(now.getHours()).padStart(2, "0");
+        const minutes = String(now.getMinutes()).padStart(2, "0");
+        const seconds = String(now.getSeconds()).padStart(2, "0");
+        const time = `${hours}:${minutes}:${seconds}`;
+
+
+        ctx.fillStyle = "#0F0";
+        ctx.font = `80px monospace`;
+        ctx.fillText(time, canvas.width / 2 - ctx.measureText(time).width / 2, 120); // Center the time
+    }
+
+        function drawMatrixRain() {
+            ctx.fillStyle = "rgba(0, 0, 0, 0.05)";
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+            ctx.fillStyle = "#0F0";
+            ctx.font = `${fontSize}px monospace`;
+
+            drops.forEach((y, x) => {
+                const text = charArray[Math.floor(Math.random() * charArray.length)];
+                ctx.fillText(text, x * fontSize, y * fontSize);
+
+                if (y * fontSize > canvas.height && Math.random() > 0.975) {
+                    drops[x] = 0;
+                }
+
+                drops[x]++;
+            });
+        }
+
+        setTimeout(() => {
+            document.getElementById("welcomeText").classList.add("hidden");
+            canvas.classList.remove("hidden");
+
+            setInterval(drawMatrixRain, 50);
+
+            setTimeout(() => {
+                drawTime();
+                timeDisplay.style.opacity = "1";
+                setInterval(drawTime, 1000);
+            }, 1000);
+        }, 3000); 
+    </script>
+</body>
+</html>

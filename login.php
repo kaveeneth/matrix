@@ -11,10 +11,8 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-// Start session
 session_start();
 
-// Handle login
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $username = $_POST['username'];
     $password = $_POST['password'];
@@ -31,8 +29,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $_SESSION['user_id'] = $userId;
         $_SESSION['username'] = $username;
 
-        // Redirect to another site/page
-        header("Location: https://777lncxc-5501.asse.devtunnels.ms/"); // Replace with your actual site or file
+        // Redirect to matrix site
+        header("Location: https://777lncxc-5501.asse.devtunnels.ms/"); 
         exit();
     } else {
         echo "Invalid username or password.";

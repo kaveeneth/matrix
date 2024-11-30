@@ -2,8 +2,8 @@
 // Database connection
 $host = 'localhost';
 $db = 'matrix_login';
-$user = 'root'; // Default MySQL username
-$pass = ''; // Default password is empty for local servers
+$user = 'root';
+$pass = ''; 
 
 $conn = new mysqli($host, $user, $pass, $db);
 

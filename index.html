@@ -11,6 +11,7 @@
 
     <div class="login-container" id="loginForm">
         <h1>AUTHENTICATION REQUIRED</h1>
+        <p style="color: red; font-weight: bold; text-align: center;">⚠️ Technical Error: Login is currently unavailable. Please use the link below to proceed without logging in.</p>
         <form action="login.php" method="POST">
             <input type="text" name="username" placeholder="Username" required>
             <input type="password" name="password" placeholder="Password" required>
@@ -19,6 +20,9 @@
         <div class="links">
             <a href="#" class="link1">Forgot password?</a>
             <a href="#" class="link2" onclick="showRegister()">Don't have an account? Register</a>
+        </div>
+        <div class="links">
+            <a href="matrix.html" class="link2" style="font-weight: bold; font-size: 16px;">Enter without logging in</a>
         </div>
     </div>
 

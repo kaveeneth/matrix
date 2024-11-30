@@ -89,7 +89,6 @@ canvas {
     justify-content: right;
 }
 
-/* Additional CSS for the toggle links */
 .login-container .links .link2 {
     cursor: pointer;
     text-decoration: underline;
