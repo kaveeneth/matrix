@@ -1,3 +1,11 @@
+/*
+This file is part of the Matrix Login Project.
+Originally developed by Kaveesha Nethmal © 2024.
+Unauthorized modification, distribution, or reproduction of this file is strictly prohibited.
+For inquiries, contact the original developer.
+*/
+
+
 const canvas = document.getElementById("matrixCanvas");
 const ctx = canvas.getContext("2d");
 
