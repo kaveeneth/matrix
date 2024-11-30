@@ -19,9 +19,9 @@ if ($conn->connect_error) {
 
 session_start();
 
-if ($_SERVER['REQUEST_METHOD'] === 'GET') {
-    $username = $_GET['username'];
-    $password = $_GET['password'];
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $username = $_POST['username'];
+    $password = $_POST['password'];
 
     // Fetch user information from database
     $stmt = $conn->prepare("SELECT id, password FROM users WHERE username = ?");
