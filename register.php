@@ -19,8 +19,8 @@ if ($conn->connect_error) {
 
 // Handle registration
 if ($_SERVER['REQUEST_METHOD'] === 'GET') {
-    $username = $_POST['username'];
-    $password = password_hash($_POST['password'], PASSWORD_BCRYPT); // Secure hashing
+    $username = $_GET['username'];
+    $password = password_hash($_GET['password'], PASSWORD_BCRYPT); // Secure hashing
 
     $stmt = $conn->prepare("INSERT INTO users (username, password) VALUES (?, ?)");
     $stmt->bind_param("ss", $username, $password);
