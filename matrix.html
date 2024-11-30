@@ -29,6 +29,8 @@ For inquiries, contact the original developer.
             height: 100vh;
             font-size: 50px;
             transition: opacity 2s ease-in-out;
+            line-height: 80px;
+            color: red;
         }
 
         #timeDisplay {
@@ -55,7 +57,10 @@ For inquiries, contact the original developer.
     </style>
 </head>
 <body>
-    <div id="welcomeText">You're now out of the Matrix. Welcome to the real world.</div>
+    <div id="welcomeText">
+        ⚠️ Breach Detected <br> Unauthorized entry attempt. Exiting system... <br> You may now enter back to Matrix..
+        <!-- You're now out of the Matrix. Welcome to the real world. -->
+    </div>
     <div id="timeDisplay"></div>
     <canvas id="matrixCanvas" class="hidden"></canvas>
     <div style="position: fixed; bottom: 10px; right: 10px; font-family: 'Courier New', Courier, monospace; font-size: 12px; color: #888;">
