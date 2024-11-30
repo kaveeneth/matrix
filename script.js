@@ -12,7 +12,7 @@ const ctx = canvas.getContext("2d");
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 
-const characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789@#$%^&*()";
+const characters = "אבגדהוזחטיכלמנסעפצקרשתךםןףץ";
 const charArray = characters.split("");
 const fontSize = 16;
 const columns = Math.floor(canvas.width / fontSize);
